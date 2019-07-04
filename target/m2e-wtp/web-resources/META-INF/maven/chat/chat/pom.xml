@@ -315,12 +315,7 @@
 		    <version>1.2</version>
 		</dependency>
 		
-		<dependency>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-compiler-plugin</artifactId>
-			<version>2.3.2</version>
-			
-		</dependency>
+
 	</dependencies>
 	<build>
 		<sourceDirectory>${basedir}/src</sourceDirectory>
@@ -334,37 +329,8 @@
 			</resource>
 		</resources>
 		<plugins>
-		
-		<!-- 指定到相对路径下-->
-		<!--  
-		<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<executions>
-					 <execution>
-					      <id>copy-artifact</id>
-					      <phase>package</phase>
-					      <goals>
-					          <goal>copy</goal>
-					      </goals>
-					      <configuration>
-					                <artifactItems>
-					                    <artifactItem>
-					                        <groupId>${project.groupId}</groupId>
-					                        <artifactId>${project.artifactId}</artifactId>
-					                        <version>${project.version}</version>
-					                        <type>${project.packaging}</type>
-					                    </artifactItem> 
-					                </artifactItems>
-					                <outputDirectory>${session.executionRootDirectory}/targettest/</outputDirectory>
-					      </configuration>
-					</execution>
-				</executions>
-		</plugin>
-		-->
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>2.3</version>
 				<configuration>
 					<webappDirectory>${basedir}/WebRoot</webappDirectory>
 					<warSourceDirectory>${basedir}/WebRoot</warSourceDirectory>
@@ -372,10 +338,9 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>1.6</source>
+					<target>1.6</target>
 				</configuration>
 			</plugin>
 		</plugins>
